@@ -18,25 +18,27 @@ def main():
     ax[0].grid()
 
     ax[1].plot(df['time'], df['vel_res'],
-               label=r'$\dot{q}_{res}$', ls='-', color='black')
+               label=r'$\dot{q}_{res}$', ls='-.', color='gray')
+    ax[1].plot(df['time'], df['vel_res_hat'],
+               label=r'$\hat{\dot{q}}_{res}$', ls='-', color='black')
     # ax[1].set_xlabel('t [s]')
     ax[1].set_ylabel(r'$\dot{q}_{res}$ [m/s]')
     ax[1].legend()
     ax[1].grid()
 
-    ax[2].plot(df['time'], df['tau_ref'],
-               label=r'$\tau_{ref}$', ls='-', color='black')
-    # ax[1].set_xlabel('t [s]')
-    ax[2].set_ylabel(r'$\tau_{ref}$ [N]')
+    ax[2].plot(df['time'], df['tau_dis'],
+               label=r'$\tau_{dis}$', ls='-.', color='gray')
+    ax[2].plot(df['time'], df['tau_dis_hat'],
+               label=r'$\hat{\tau}_{dis}$', ls='-', color='black')
+    # ax[2].set_xlabel('t [s]')
+    ax[2].set_ylabel(r'$\tau_{dis}$ [N]')
     ax[2].legend()
     ax[2].grid()
 
-    ax[3].plot(df['time'], df['tau_dis'],
-               label=r'$\tau_{dis}$', ls='-.', color='gray')
-    ax[3].plot(df['time'], df['tau_dis_hat'],
-               label=r'$\hat{\tau}_{dis}$', ls='-', color='black')
-    ax[3].set_xlabel('t [s]')
-    ax[3].set_ylabel(r'$\tau_{dis}$ [N]')
+    ax[3].plot(df['time'], df['tau_ref'],
+               label=r'$\tau_{ref}$', ls='-', color='black')
+    ax[3].set_xlabel('time [s]')
+    ax[3].set_ylabel(r'$\tau_{ref}$ [N]')
     ax[3].legend()
     ax[3].grid()
 
